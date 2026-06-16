@@ -4,12 +4,12 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "unmount-image"
-version = "0.1.1"
+version = "0.1.2"
 description = "Disk image unmount and detach via udisksctl (Linux)"
 readme = "README.md"
 license = "GPL-3.0-only"
 requires-python = ">=3.10"
-dependencies = []
+dependencies = ["udisks-monitor>=0.1.0"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Environment :: Console",

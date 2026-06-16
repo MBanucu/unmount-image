@@ -4,19 +4,24 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
+    udisks-monitor.url = "github:MBanucu/udisks-monitor";
   };
 
   outputs =
     { self
     , nixpkgs
     , flake-utils
+    , udisks-monitor
     }:
     flake-utils.lib.eachDefaultSystem (
       system:
       let
         pkgs = import nixpkgs {
           inherit system;
-          overlays = [ self.overlays.default ];
+          overlays = [
+            udisks-monitor.overlays.default
+            self.overlays.default
+          ];
         };
       in
       {
@@ -36,6 +41,7 @@
       overlays.default = final: prev: {
         unmount-image = final.python3.pkgs.callPackage ./default.nix {
           src = final.lib.cleanSource ./.;
+          inherit (final.python3.pkgs) udisks-monitor;
         };
         python3 = prev.python3.override {
           packageOverrides = _: _: {

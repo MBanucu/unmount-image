@@ -2,17 +2,18 @@
   lib
 , buildPythonPackage
 , setuptools
+, udisks-monitor
 , src
 }:
 buildPythonPackage rec {
   pname = "unmount-image";
-  version = "0.1.0";
+  version = "0.1.2";
   pyproject = true;
 
   inherit src;
 
   nativeBuildInputs = [ setuptools ];
-  propagatedBuildInputs = [ ];
+  propagatedBuildInputs = [ udisks-monitor ];
 
   doCheck = false;
   pythonImportsCheck = [ "unmount_image" ];
