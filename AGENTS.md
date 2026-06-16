@@ -38,8 +38,25 @@ unmount_image/
   _helpers.py    — loop_delete subprocess wrapper
   _monitor.py    — udisksctl monitor integration, detach thread
 tests/
-  test_unit.py
-  test_monitor.py
-  test_parser.py
-  test_int.py
-```
+  test_unit.py                  — unit tests (API, strategies)
+  test_monitor.py               — _UdisksMonitor signals, _fallback_detach
+  test_parser.py                — _MonitorParser basic parsing
+  test_int.py                   — integration tests (real udisksctl)
+  test_ansi_edge.py             — ANSI escape handling edge cases
+  test_job_interleaving_edge.py — concurrent job interleaving
+  test_parser_state_edge.py     — parser state machine boundary conditions
+  test_device_name_edge.py      — device name extraction edge cases
+  test_property_value_edge.py   — property value parsing edge cases
+  test_loop_recycling_edge.py   — loop device number recycling
+  test_concurrent_events_edge.py — interleaved events from multiple devices
+  test_backing_file_edge.py     — BackingFile lifecycle edge cases
+tools/
+  capture_monitor.py   — capture live monitor output with labels
+  analyze_monitor.py   — parse and summarize captured output
+  inspect_regex.py     — test regexes against captured/live output
+  stress_monitor.py    — concurrent stress test with real devices
+docs/
+  index.md             — documentation index
+  01-...10-*.md        — udisksctl monitor reference docs
+  11-manual-testing.md — manual test procedures
+  12-agent-tools.md    — LLM agent workflows and tools
