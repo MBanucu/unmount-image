@@ -234,7 +234,7 @@ def _fallback_detach(name: str, device: str):
     Used when the udisksctl monitor does not confirm detachment
     before the timeout.
     """
-    sys_path = f'/sys/block/{name}'
+    sys_path = f'/sys/block/{name}/loop/backing_file'
     for _ in range(30):
         _unmount_normal(device, None)
         time.sleep(0.1)
