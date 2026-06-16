@@ -41,7 +41,7 @@
       overlays.default = final: prev: {
         unmount-image = final.python3.pkgs.callPackage ./default.nix {
           src = final.lib.cleanSource ./.;
-          inherit (final.python3.pkgs) udisks-monitor;
+          inherit (final) udisks-monitor;
         };
         python3 = prev.python3.override {
           packageOverrides = _: _: {
