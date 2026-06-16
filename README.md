@@ -10,6 +10,10 @@ Disk image unmount and detach via udisksctl (Linux).
 [![CI](https://img.shields.io/github/actions/workflow/status/MBanucu/unmount-image/test.yml?branch=main)](https://github.com/MBanucu/unmount-image/actions/workflows/test.yml)
 [![codecov](https://codecov.io/gh/MBanucu/unmount-image/branch/main/graph/badge.svg)](https://codecov.io/gh/MBanucu/unmount-image)
 
+[![Downloads total](https://pepy.tech/badge/unmount-image)](https://pepy.tech/project/unmount-image)
+[![Downloads/month](https://pepy.tech/badge/unmount-image/month)](https://pepy.tech/project/unmount-image)
+[![Downloads/week](https://pepy.tech/badge/unmount-image/week)](https://pepy.tech/project/unmount-image)
+
 ## Quick start
 
 ```python
